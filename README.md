@@ -4,6 +4,8 @@ Simple NeoVim plugin for tracking preferred color style.
 
 Tracks the GNOME desktop color-scheme setting (`gsettings org.gnome.desktop.interface color-scheme`) and fires a callback on startup and whenever it changes.
 
+https://github.com/user-attachments/assets/1713f0d1-d86e-4ef2-8493-25ac980d3aa9
+
 ## Installation
 
 <details>
