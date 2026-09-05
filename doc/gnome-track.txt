@@ -1,0 +1,52 @@
+*gnome-track.txt*	Gnome color-scheme tracking for Neovim
+
+==============================================================================
+CONTENTS						*gnome-track-contents*
+
+1. Introduction.....................|gnome-track-intro|
+2. Setup............................|gnome-track-setup|
+3. API..............................|gnome-track-api|
+
+==============================================================================
+1. Introduction					*gnome-track-intro*
+
+gnome-track is a minimal plugin that tracks the GNOME desktop color-scheme
+preference (`gsettings org.gnome.desktop.interface color-scheme`) and fires a
+callback whenever it changes. Handy for syncing your colorscheme / terminal
+opacity with the desktop light/dark toggle.
+
+The scheme is one of: "prefer-dark", "prefer-light", "default".
+
+==============================================================================
+2. Setup						*gnome-track-setup*
+
+|lazy.nvim|:
+>
+	lua
+	return {
+	    dir = "/path/to/gnome-track",
+	    config = function()
+	        require("gnome-track").setup({ callback = function(scheme) ... end })
+	    end,
+	}
+<
+
+==============================================================================
+3. API							*gnome-track-api*
+
+setup({opts})						*gnome-track.setup()*
+	Accepts a config table or a callback function.
+
+	Table options:
+	    callback	Callable fired with the current scheme on startup and on
+			every change.
+	    notify	Emit an INFO notification on each change (default: true).
+
+track({cb})						*gnome-track.track()*
+	Register a callback and start tracking. Calling it again re-registers
+	the callback if tracking is already active.
+
+stop()							*gnome-track.stop()*
+	Stop the gsettings monitor and clear all callbacks.
+
+vim:tw=78:ts=8:noet:ft=help:norl:
