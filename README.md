@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/1713f0d1-d86e-4ef2-8493-25ac980d3aa9
 
 ```lua
 return {
-    "I0I-I0I/gnome-track.nvim",
+    "NnoFLy/gnome-track.nvim",
     lazy = false,
     config = function()
         require("gnome-track").setup({ callback = ... })
@@ -27,7 +27,7 @@ return {
 <summary>Native (with vim.pack)</summary>
 
 ```lua
-vim.pack.add({ "https://github.com/I0I-I0I/gnome-track.nvim" })
+vim.pack.add({ "https://github.com/NnoFLy/gnome-track.nvim" })
 ```
 
 </details>
@@ -37,7 +37,7 @@ vim.pack.add({ "https://github.com/I0I-I0I/gnome-track.nvim" })
 Via `track`:
 
 ```lua
-vim.pack.add({ "https://github.com/I0I-I0I/stille.nvim" })
+vim.pack.add({ "https://github.com/NnoFLy/stille.nvim" })
 
 ---@param scheme "prefer-dark" | "prefer-light" | "default"
 require("gnome-track").track(function(scheme)
